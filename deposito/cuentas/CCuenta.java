@@ -1,5 +1,8 @@
 package cuentas;
-
+/**
+ * Esta clase se utiliza para crear objetos 
+ * @author Jose Luis
+ */
 public class CCuenta {
 
 
@@ -8,10 +11,20 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * Este constructor basico
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * Constructor completo con todos los atributos
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -19,11 +32,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Consultar el estado
+     * @return 
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     * Realizar ingreso de cantidad
+     * @param cantidad
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -31,6 +53,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Retirar una cantidad 
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
@@ -40,6 +67,10 @@ public class CCuenta {
         setSaldo(getSaldo() - cantidad);
     }
  
+    /**
+     * Realizar opertaiva cuenta
+     * @param cantidad 
+     */
     public void operativa_cuenta(float cantidad){
         try {
             retirar(cantidad);
